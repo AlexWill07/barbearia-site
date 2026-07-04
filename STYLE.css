@@ -1,0 +1,1314 @@
+/*==================================================
+                RESET
+==================================================*/
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body.loading{
+    overflow:hidden;
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    padding:20px 0;
+
+    background:rgba(10,10,10,.70);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/*==================================================
+                LOGO
+==================================================*/
+
+.logo{
+
+    text-decoration:none;
+
+    color:#D4AF37;
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:.35s;
+
+}
+
+.logo:hover{
+
+    color:#e6c14a;
+
+    transform:scale(1.05);
+
+}
+
+/*==================================================
+                MENU
+==================================================*/
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+nav li{
+
+    list-style:none;
+
+}
+
+nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#D4AF37;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#D4AF37;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/*==================================================
+                HERO
+==================================================*/
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:url("img/hero-barbershop_e02c05de.jpg") center center/cover no-repeat;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to right,
+
+        rgba(0,0,0,.88),
+
+        rgba(0,0,0,.55)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+
+    max-width:900px;
+
+}
+
+.hero-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-35px;
+
+    z-index:-1;
+
+    background:radial-gradient(circle,
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,.25),
+
+        transparent);
+
+    filter:blur(35px);
+
+}
+
+/*==================================================
+            SUBTÍTULO
+==================================================*/
+
+.hero-subtitle{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+.hero-subtitle::after{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    margin:15px auto 0;
+
+    background:#D4AF37;
+
+}
+
+/*==================================================
+                TÍTULO
+==================================================*/
+
+.hero h1{
+
+    font-size:clamp(3rem,5vw,4.7rem);
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:fadeUp 1s ease forwards;
+
+    animation-delay:.3s;
+
+}
+
+.hero h1 span{
+
+    color:#D4AF37;
+
+}
+
+/*==================================================
+                TEXTO
+==================================================*/
+
+.hero p{
+
+    max-width:600px;
+
+    margin:0 auto;
+
+    color:#d2d2d2;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:fadeUp 1s ease forwards;
+
+    animation-delay:.6s;
+
+}
+
+/*==================================================
+                BOTÃO
+==================================================*/
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:45px;
+
+    padding:18px 42px;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:buttonPop .8s ease forwards;
+
+    animation-delay:.9s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+    background:#e6c14a;
+
+    box-shadow:0 20px 40px rgba(212,175,55,.35);
+
+}
+
+/*==================================================
+                ANIMAÇÕES
+==================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes buttonPop{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(60px) scale(.8);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+/*==================================================
+                SERVIÇOS
+==================================================*/
+
+.services{
+
+    padding:120px 8%;
+
+    background:#0d0d0d;
+
+}
+
+.services-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.services-header span{
+
+    color:#D4AF37;
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    font-weight:600;
+
+}
+
+.services-header h2{
+
+    margin-top:18px;
+
+    font-size:46px;
+
+    margin-bottom:15px;
+
+}
+
+.services-header p{
+
+    color:#bdbdbd;
+
+    font-size:18px;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                CARDS
+==================================================*/
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    width:340px;
+
+    background:#171717;
+
+    border:1px solid #2b2b2b;
+
+    border-radius:22px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    transform:translateY(-15px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 25px 45px rgba(212,175,55,.18);
+
+}
+
+.icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#D4AF37;
+
+    font-size:38px;
+
+    transition:.4s;
+
+}
+
+.card:hover .icon{
+
+    transform:rotate(8deg) scale(1.08);
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
+.card h3{
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    color:#bdbdbd;
+
+    line-height:1.9;
+
+    margin-bottom:28px;
+
+}
+
+.card-link{
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.card-link:hover{
+
+    letter-spacing:1px;
+
+}
+
+/*==================================================
+                SOBRE
+==================================================*/
+
+.about{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:130px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.about-image{
+
+    flex:1;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    height:560px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.6s;
+
+}
+
+.about-image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.about-text{
+
+    flex:1;
+
+}
+
+.about-text h2{
+
+    font-size:46px;
+
+    margin:20px 0;
+
+}
+
+.about-text p{
+
+    color:#bdbdbd;
+
+    font-size:18px;
+
+    line-height:2;
+
+    margin-bottom:35px;
+
+}
+
+/*==================================================
+            DIFERENCIAIS
+==================================================*/
+
+.about-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.about-list div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#ddd;
+
+    font-size:17px;
+
+}
+
+.about-list i{
+
+    color:#D4AF37;
+
+    font-size:22px;
+
+}
+/*==================================================
+                TABELA DE PREÇOS
+==================================================*/
+
+.prices{
+
+    padding:120px 8%;
+
+    background:#101010;
+
+}
+
+.price-table{
+
+    max-width:850px;
+
+    margin:60px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.price-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#171717;
+
+    border:1px solid #2a2a2a;
+
+    border-radius:18px;
+
+    padding:28px 35px;
+
+    transition:.35s;
+
+}
+
+.price-item:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.15);
+
+}
+
+.price-item span{
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.price-item strong{
+
+    color:#D4AF37;
+
+    font-size:30px;
+
+}
+
+.price-item small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#D4AF37;
+
+    font-size:14px;
+
+}
+
+.destaque{
+
+    border:2px solid #D4AF37;
+
+    box-shadow:0 0 35px rgba(212,175,55,.18);
+
+}
+
+.price-button{
+
+    text-align:center;
+
+    margin-top:55px;
+
+}
+
+/*==================================================
+                GALERIA
+==================================================*/
+
+.gallery{
+
+    padding:120px 8%;
+
+    background:#0d0d0d;
+
+}
+
+.gallery-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.gallery-header span{
+
+    color:#D4AF37;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.gallery-header h2{
+
+    font-size:46px;
+
+    margin:18px 0;
+
+}
+
+.gallery-header p{
+
+    color:#bdbdbd;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:330px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.55s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.gallery-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.75),
+
+        rgba(0,0,0,.15)
+
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover::after{
+
+    opacity:1;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    padding-bottom:35px;
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:5;
+
+}
+
+.gallery-item:hover .overlay{
+
+    opacity:1;
+
+}
+
+.overlay h3{
+
+    color:#fff;
+
+    font-size:24px;
+
+    transform:translateY(25px);
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover .overlay h3{
+
+    transform:translateY(0);
+
+}
+
+/*==================================================
+            EFEITO NAS IMAGENS
+==================================================*/
+
+.gallery-item{
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-8px);
+
+}
+/*==================================================
+                    CONTATO
+==================================================*/
+
+.contact{
+
+    padding:120px 8%;
+
+    background:#111;
+
+}
+
+.contact-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+    margin-top:60px;
+
+}
+
+.contact-card{
+
+    width:320px;
+
+    background:#171717;
+
+    border:1px solid #2b2b2b;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    transition:.35s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 20px 40px rgba(212,175,55,.18);
+
+}
+
+.contact-card i{
+
+    font-size:48px;
+
+    color:#D4AF37;
+
+    margin-bottom:20px;
+
+}
+
+.contact-card h3{
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+}
+
+.contact-card p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+footer{
+
+    background:#090909;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:60px 20px;
+
+    text-align:center;
+
+}
+
+footer h3{
+
+    color:#D4AF37;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+    letter-spacing:2px;
+
+}
+
+footer p{
+
+    color:#9b9b9b;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                BOTÃO WHATSAPP
+==================================================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:32px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.12);
+
+}
+
+/*==================================================
+                    ANIMAÇÕES
+==================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.services,
+.about,
+.prices,
+.gallery,
+.contact{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/*==================================================
+                RESPONSIVIDADE
+==================================================*/
+
+@media(max-width:992px){
+
+    .about{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    header{
+
+        padding:15px 0;
+
+    }
+
+    .container{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:20px;
+
+    }
+
+    .hero{
+
+        padding:0 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.7rem;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .cards{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-image img{
+
+        height:350px;
+
+    }
+
+    .price-item{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+    }
+
+    .contact-card{
+
+        width:100%;
+
+        max-width:350px;
+
+    }
+
+    .whatsapp{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:28px;
+
+        right:20px;
+
+        bottom:20px;
+
+    }
+
+    
+
+}
